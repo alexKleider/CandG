@@ -1,0 +1,43 @@
+#!../venv/bin/python
+import os
+import sys
+import pwd   # A window into /etc/passwd file.
+
+encoding = sys.getfilesystemencoding()
+print("File system encoding is '{}'.".format(encoding))
+assert (encoding == 'utf-8')
+
+print("User Info:")
+user = os.getlogin()
+uid = os.getuid()
+print("Current user: {}".format(user))
+print("Current uid: {}".format(uid))
+
+pw_by_uid =  pwd.getpwuid(os.getuid())
+print("Entry in /etc/passwd retrieved by user ID:")
+print(pw_by_uid)
+
+pw_by_name = pwd.getpwnam(user)
+print('Entry retrieved by user name is of type {},'
+                            .format(type(pw_by_name)))
+if pw_by_uid == pw_by_uid:
+    print('and is the same as that retrieved by user ID.')
+#print('...and is displayed as:')
+#print(pw_by_name)
+print(
+"It (however obtained,) can be displayed with a for loop:")
+print('; '.join([str(entry) for entry in pw_by_name]))
+#for entry in pw_by_name:
+#    print("\t{}".format(entry) )
+print("...or individually using attributes:")
+print('; '.join([   pw_by_name.pw_name,
+                    pw_by_name.pw_passwd,
+                    str(pw_by_name.pw_uid),
+                    str(pw_by_name.pw_gid),
+                    pw_by_name.pw_gecos,
+                    pw_by_name.pw_dir,
+                    pw_by_name.pw_shell    ]))
+print("""Just don't forget that the IDs are integers
+and must be converted to strings when part of 
+a list that is to be used as a parameter for the
+join() function.""")
