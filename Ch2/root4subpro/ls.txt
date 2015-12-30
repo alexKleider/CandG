@@ -1,0 +1,4 @@
+fileA.text
+fileB.text
+ls.txt
+test.txt
