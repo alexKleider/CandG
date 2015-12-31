@@ -35,9 +35,12 @@ Accessing Directories in Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     dirs.py
 Using Wildcards, Copying, Deleting, and Moving Files
--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    wcdm.py
+    util.py
 Working With Paths
 ~~~~~~~~~~~~~~~~~~
+    paths.py
 Plumbing the Directory Tree Depths
 ----------------------------------
 Building a File Finder (file_tree.py)

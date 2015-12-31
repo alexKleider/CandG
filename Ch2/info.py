@@ -6,28 +6,14 @@ File Status and Permissions:
 
     os.listdir()
     os.stat()
-    os.access()
-    time.localtime()
-    time.strftime()
+        time.localtime()
+        time.strftime()
+    os.access(<file_name>, os.[FRWX]_OK)
+
 """
 import os
 import time
 import shutil as sh
-
-dir_names = []
-file_names = []
-
-def setup(dir_names, file_names):
-    for dir_name in dir_names:
-        pass
-    for file_name in file_names:
-        pass
-
-def teardown(dir_names, file_names):
-    for dir_name in dir_names:
-        pass
-    for file_name in file_names:
-        pass
 
 print("""'os.listdir(".")' ==> {}""".format(os.listdir(".")))
 stats = os.stat("README")
